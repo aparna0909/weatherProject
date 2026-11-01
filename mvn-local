@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+set -eu
+PROJECT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+export JAVA_HOME="$PROJECT_DIR/.tools/jdk8"
+export PATH="$JAVA_HOME/bin:$PATH"
+exec "$PROJECT_DIR/.tools/apache-maven-3.9.9/bin/mvn" -f "$PROJECT_DIR/pom.xml" "$@"
